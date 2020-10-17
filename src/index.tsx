@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { setGlobal } from 'reactn';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { initialGlobalState } from './globalState/initialState';
+
+setGlobal(initialGlobalState)
 
 ReactDOM.render(
   <React.StrictMode>
