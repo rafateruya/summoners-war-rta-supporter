@@ -3,6 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import { useGlobal } from 'reactn';
 import styled from 'styled-components';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { HomeScreen } from './screens/Home/HomeScreen';
 
 const StyledTest = styled.h1`
   color: #f0f;
@@ -11,28 +18,25 @@ const StyledTest = styled.h1`
 function App() {
   const [test] = useGlobal('test')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>
-          {test}
-        </p>
-        <StyledTest>
-          Styled Text Test
-        </StyledTest>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+          renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/">
+            <HomeScreen />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
