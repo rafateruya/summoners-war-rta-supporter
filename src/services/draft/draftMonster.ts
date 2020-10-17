@@ -8,11 +8,11 @@ export const draftMonster = (monster: Monster, index: number, userType: UserType
     teamToModify[index] = monster.name
     if (userType === UserType.me) {
         setGlobal({
-            myTeam: teamToModify
+            myTeam: [...teamToModify]
         })
     } else {
         setGlobal({
-            enemyTeam: teamToModify
+            enemyTeam: [...teamToModify]
         })
     }
 }
