@@ -1,8 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { useGlobal } from 'reactn';
-import styled from 'styled-components';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,12 +8,7 @@ import {
 } from "react-router-dom";
 import { HomeScreen } from './screens/Home/HomeScreen';
 
-const StyledTest = styled.h1`
-  color: #f0f;
-`
-
 function App() {
-  const [test] = useGlobal('test')
   return (
     <Router>
       <div>
