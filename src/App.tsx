@@ -2,6 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { useGlobal } from 'reactn';
+import styled from 'styled-components';
+
+const StyledTest = styled.h1`
+  color: #f0f;
+`
 
 function App() {
   const [test] = useGlobal('test')
@@ -15,6 +20,9 @@ function App() {
         <p>
           {test}
         </p>
+        <StyledTest>
+          Styled Text Test
+        </StyledTest>
         <a
           className="App-link"
           href="https://reactjs.org"
