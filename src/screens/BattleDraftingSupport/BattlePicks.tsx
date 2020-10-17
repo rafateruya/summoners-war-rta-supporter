@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { assets } from '../../assets'
 import { DraftTeam } from '../../components/DraftTeam/DraftTeam'
+import { UserType } from '../../models/userType'
 
 interface BattlePicksProps {
     isUserFirstPicker: boolean
@@ -31,8 +32,8 @@ export const BattlePicks: React.FC<BattlePicksProps> = ({
     return <BattlePicksWrapper>
         <img style={{ width: '100%', height: '100%' }} src={assets.battleBackground} />
         <MonsterCardWrapper>
-            <DraftTeam isFirstPick={isUserFirstPicker} />
-            <DraftTeam isFirstPick={!isUserFirstPicker} />
+            <DraftTeam isFirstPick={isUserFirstPicker} userType={UserType.me} />
+            <DraftTeam isFirstPick={!isUserFirstPicker} userType={UserType.enemy} />
         </MonsterCardWrapper>
     </BattlePicksWrapper>
 }

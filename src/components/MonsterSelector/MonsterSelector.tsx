@@ -6,15 +6,22 @@ import { ModalContent } from './ModalContent';
 import { Monster } from '../../models/monster';
 
 interface MonsterSelectorProps {
-
+    selectMonster: (monster: Monster) => void
 }
 
-export const MonsterSelector: React.FC<MonsterSelectorProps> = () => {
+export const MonsterSelector: React.FC<MonsterSelectorProps> = ({
+    selectMonster
+}) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [selectedMonster, setSelectedMonster] = useState<Monster | undefined>(undefined)
 
     const closeModal = () => {
         setIsModalOpen(false)
+    }
+
+    const onSelectMonster = (monster: Monster) => {
+        selectMonster(monster)
+        setSelectedMonster(monster)
     }
 
     return (
@@ -23,7 +30,7 @@ export const MonsterSelector: React.FC<MonsterSelectorProps> = () => {
                 <MonsterCard monster={selectedMonster} />
             </div>
             <Dialog open={isModalOpen} onClose={() => { setIsModalOpen(false) }}>
-                <ModalContent selectedMonster={selectedMonster} setSelectedMonster={setSelectedMonster} closeModal={closeModal} />
+                <ModalContent selectedMonster={selectedMonster} setSelectedMonster={onSelectMonster} closeModal={closeModal} />
             </Dialog>
         </div>
 
