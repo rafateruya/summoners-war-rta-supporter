@@ -38,7 +38,6 @@ export const FirstPickSelector: React.FC<FirstPickSelectorProps> = ({
                 })
             }
         </select>
-
     </FirstPickSelectorWrapper>
 }
 

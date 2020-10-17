@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MonsterCard } from '../MonsterCard/MonsterCard'
+import { MonsterSelector } from '../MonsterSelector/MonsterSelector'
 
 interface DraftTeamProps {
     isFirstPick: boolean
@@ -33,7 +33,7 @@ export const DraftTeam: React.FC<DraftTeamProps> = ({
                     return (
                         <MonsterCardColumnWrapper>
                             <MonsterCardWrapper>
-                                <MonsterCard />
+                                <MonsterSelector />
                             </MonsterCardWrapper>
                         </MonsterCardColumnWrapper>
                     )
@@ -42,10 +42,10 @@ export const DraftTeam: React.FC<DraftTeamProps> = ({
                 return (
                     <MonsterCardColumnWrapper>
                         <MonsterCardWrapper>
-                            <MonsterCard />
+                            <MonsterSelector />
                         </MonsterCardWrapper>
                         <MonsterCardWrapper>
-                            <MonsterCard />
+                            <MonsterSelector />
                         </MonsterCardWrapper>
                     </MonsterCardColumnWrapper>
                 )
